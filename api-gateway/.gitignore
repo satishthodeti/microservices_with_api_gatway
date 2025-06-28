@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# IDE and editor files
+.vscode/
+coverage/
+
+package-lock.json
+Dockerfile
+.dockerignore
+*.yml
