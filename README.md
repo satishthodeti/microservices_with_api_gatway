@@ -1,119 +1,95 @@
-🧩 API Gateway Microservices Project
-This project demonstrates a microservices architecture with a centralized API Gateway, developed using Node.js and Express. The project consists of:
+# 🧩 API Gateway Microservices Project
 
-🚪 API Gateway Service (Port: 3000)
-👤 User Service (Port: 3001)
-📦 Product Service (Port: 3002)
+This project demonstrates a **microservices architecture** using a centralized **API Gateway**, built with **Node.js** and **Express.js**.
 
-Each microservice has its own basic set of APIs. The API Gateway routes requests to the appropriate service.
-Services and Ports
+---
 
-API Gateway: localhost:3000
-User Service: localhost:3001
-Product Service: localhost:3002
+## 🔧 Services Overview
 
-API Endpoints
-API Gateway
+This project includes the following services:
 
-Health Check
+- 🚪 **API Gateway** — routes all requests (Port `3000`)
+- 👤 **User Service** — handles user operations (Port `3001`)
+- 📦 **Product Service** — handles product operations (Port `3002`)
 
-GET /ok
-Description: Verifies the API Gateway is operational.
-Response: Status message indicating the gateway is running.
+Each microservice contains basic endpoint logic and is independently runnable.
 
+---
 
+## 🌐 Service Ports
 
+| Service         | Port             |
+|-----------------|------------------|
+| API Gateway     | `localhost:3000` |
+| User Service    | `localhost:3001` |
+| Product Service | `localhost:3002` |
 
-Users
+---
 
-GET /users/
-Description: Fetches a list of users by routing to the User Service.
-Response: JSON array of user data.
+## 📡 API Endpoints
 
+All endpoints are accessible **via API Gateway** at `http://localhost:3000`.
 
+### ✅ Health Check
 
-
-Products
-
-GET /products/
-Description: Fetches a list of products by routing to the Product Service.
-Response: JSON array of product data.
-
-
-
+- **Endpoint:** `GET /ok`
+- **Description:** Verifies the API Gateway is operational.
+- **Sample Response:**
+  ```json
+  {
+    "message": "API Gateway is running"
+  }
 
 
-User Service
+## 📡 API Endpoints
 
-Runs on localhost:3001
-Manages user-related operations (e.g., retrieving user data).
-Accessible via the API Gateway at /users/.
+### ✅ Health Check
 
-Product Service
+- **Method:** `GET /ok`
+- **Description:** Verifies that the API Gateway is operational.
+- **Response:**
+  ```json
+  {
+    "message": "API Gateway is running"
+  }
 
-Runs on localhost:3002
-Manages product-related operations (e.g., retrieving product data).
-Accessible via the API Gateway at /products/.
+## Services
 
-Setup and Running
+### 🧑 User Service
 
-Prerequisites
+- **Runs on**: `localhost:3001`
+- **Purpose**: Manages user-related operations (e.g., retrieving user data).
+- **Access via Gateway**: `/users/`
 
-Install Node.js (v16 or higher recommended).
-Ensure all dependencies are installed for each service (npm install in each service directory).
+### 📦 Product Service
 
+- **Runs on**: `localhost:3002`
+- **Purpose**: Manages product-related operations (e.g., retrieving product data).
+- **Access via Gateway**: `/products/`
 
-Starting the Services
+---
 
-API Gateway:cd api-gateway
-npm start
+## 🛠️ Setup and Running
 
+### Prerequisites
 
-Runs on localhost:3000
+- Install **Node.js** (v16 or higher recommended).
+- Install dependencies for each service.
 
+## Testing the Endpoints
 
-User Service:cd user-service
-npm start
+| Service         | Port                                |
+|-----------------|-------------------------------------|
+| API Gateway     | `http://localhost:3000/ok`          |
+| User Service    | `http://localhost:3000/users/ok`    |
+| Product Service | `http://localhost:3000/products/ok` |
 
-
-Runs on localhost:3001
-
-
-Product Service:cd product-service
-npm start
-
-
-Runs on localhost:3002
-
-
-
-
-Testing the Endpoints
-
-Use tools like Postman or curl to test:curl http://localhost:3000/ok
-curl http://localhost:3000/users/
-curl http://localhost:3000/products/
-
-
-
-
-
-Project Structure
-project-root/
-├── api-gateway/
-│   └── (API Gateway code and configuration)
-├── user-service/
-│   └── (User Service code and configuration)
-├── product-service/
-│   └── (Product Service code and configuration)
-└── README.md
-
-Notes
+##  Notes
 
 The API Gateway serves as a single entry point, routing requests to the appropriate microservice.
 Each service is independent and can be developed, deployed, or scaled separately.
 Ensure all services are running concurrently for proper functionality.
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](apigatewayService.png)
+![alt text](userService.png)
+![alt text](productService.png)
