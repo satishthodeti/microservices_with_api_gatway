@@ -11,6 +11,3 @@ logs/
 coverage/
 
 package-lock.json
-Dockerfile
-.dockerignore
-*.yml
